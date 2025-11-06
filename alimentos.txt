@@ -1,0 +1,5 @@
+1,Hamburguer,30.00
+2,Pizza Mussarela,25.50
+3,Açaí 500ml,12.00
+4,Coxinhas 100g, 15.90
+5,Croissant,8.50
