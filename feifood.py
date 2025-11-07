@@ -69,7 +69,9 @@ def menu_usuario_logado(usuario):
 
 def buscar_alimentos(usuario):
     print("===== Buscar Alimentos =====")
+    print("Aperte enter para listar todos os alimentos ou digite um termo para buscar.")
     termo = input("Digite o nome ou parte do nome do alimento: ").lower()
+    
     encontrados = []
 
     with open("alimentos.txt", "r") as arquivo:
