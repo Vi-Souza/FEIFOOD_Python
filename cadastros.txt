@@ -5,8 +5,5 @@ rafael,rafael,123
 giovanna,bolinho123,123456
 Lucas,Melo,melo
 Guilherme,YE,123457
-<<<<<<< HEAD
 Luzia,Rodrigues,5522
-=======
 Livia,Livia,1234
->>>>>>> 956f1d43b8c6e60fdc68ab00a8096af553cdf7e1

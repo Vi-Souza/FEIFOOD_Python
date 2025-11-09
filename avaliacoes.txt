@@ -4,8 +4,5 @@
 4,rafael,4,Legal
 5,giovanna,2,jkfbjbjbdjbsjvjsv
 7,Guilherme,5,Bom
-<<<<<<< HEAD
 8,Luzia,4,bom
-=======
-8,Livia,5,Bom
->>>>>>> 956f1d43b8c6e60fdc68ab00a8096af553cdf7e1
+9,Livia,5,Bom
