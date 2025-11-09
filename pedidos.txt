@@ -5,4 +5,8 @@
 5,giovanna,4
 6,Lucas,1
 7,Guilherme,1
+<<<<<<< HEAD
 8,Luzia,1
+=======
+8,Livia,4
+>>>>>>> 956f1d43b8c6e60fdc68ab00a8096af553cdf7e1
