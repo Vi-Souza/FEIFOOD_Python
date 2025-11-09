@@ -44,6 +44,7 @@ MENU_LOGADO = {
     "0": "Logout",
 }
 
+#função do menu logado
 def menu_usuario_logado(usuario):
     carrinho_do_usuario = []
     while True:
