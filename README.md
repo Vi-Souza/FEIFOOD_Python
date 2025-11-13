@@ -68,4 +68,4 @@ O usuário pode avaliar imediatamente.
 - Apenas o dono de um pedido pode avaliá-lo.  
 - As avaliações usam `;` como separador para evitar problemas com vírgulas nos comentários.  
 - Todos os arquivos `.txt` devem estar na mesma raiz do arquivo `menu.py`.  
-
+- Link do vídeo de apresentação https://youtu.be/xNb2ZLQbMW0
