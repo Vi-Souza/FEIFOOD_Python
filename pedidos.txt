@@ -1,3 +1,2 @@
-1,Vitor,1|2
-2,Vitor,3
-1,Gustavo,1
+1,Vitor,2
+1,Gustavo,4
