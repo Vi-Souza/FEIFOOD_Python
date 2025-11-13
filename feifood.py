@@ -48,7 +48,8 @@ MENU_LOGADO = {
 def menu_usuario_logado(usuario):
     carrinho_do_usuario = []
     while True:
-        print("\n=== FEIFOOD ===")
+        print(f"\nBem vindo {usuario}!")
+        print("=== FEIFOOD ===")
         for chave, valor in MENU_LOGADO.items():
             print(f"{chave} - {valor}")
         print("========================")
@@ -107,13 +108,14 @@ def avaliar_pedido(usuario, id_pedido=None):
     if not id_pedido:
         id_pedido = input("Digite o ID do pedido que deseja avaliar: ")
 
+    # Verifica se o pedido pertence ao usuário
     encontrado = False
     with open("pedidos.txt", "r") as arquivo:
         for linha in arquivo:
             partes = linha.strip().split(",")
             if len(partes) == 3:
                 id_, dono, _ = partes
-                if id_ == id_pedido and dono == usuario:
+                if id_ == str(id_pedido) and dono == usuario:
                     encontrado = True
                     break
 
@@ -121,32 +123,45 @@ def avaliar_pedido(usuario, id_pedido=None):
         print("Pedido não encontrado ou não pertence a você.")
         return
 
-    nota = input("Dê uma nota de 1 a 5 para o pedido: ")
-    comentario = input("Deixe um comentário (opcional): ")
+    # Validação da nota
+    while True:
+        nota = input("Dê uma nota de 1 a 5 para o pedido: ").strip()
+        if nota.isdigit() and 1 <= int(nota) <= 5:
+            break
+        print("Nota inválida. Digite um número entre 1 e 5.")
 
+    comentario = input("Deixe um comentário (opcional): ").strip()
+
+    # Escreve com “;” e garante nova linha
     with open("avaliacoes.txt", "a") as arquivo:
-        arquivo.write(f"{id_pedido},{usuario},{nota},{comentario}\n")
+        arquivo.write(f"{id_pedido};{usuario};{nota};{comentario}\n")
 
     print("Avaliação registrada com sucesso!")
 
+
 def finalizar_pedido(usuario, lista_ids):
+    # Calcular novo_id considerando apenas pedidos do mesmo usuário
     novo_id = 1
     with open("pedidos.txt", "r") as arquivo:
         for linha in arquivo:
             partes = linha.strip().split(",")
-            if partes and partes[0].isdigit():
-                id_existente = int(partes[0])
-                if id_existente >= novo_id:
-                    novo_id = id_existente + 1
+            if len(partes) >= 2:
+                id_existente, dono = partes[0], partes[1]
+                if dono == usuario and id_existente.isdigit():
+                    id_num = int(id_existente)
+                    if id_num >= novo_id:
+                        novo_id = id_num + 1
 
+    # Gravar novo pedido (id por usuário)
     with open("pedidos.txt", "a") as arquivo:
         arquivo.write(f"{novo_id},{usuario},{'|'.join(lista_ids)}\n")
 
-    print(f"Pedido #{novo_id} finalizado com sucesso!")
+    print(f"Pedido #{novo_id} finalizado com sucesso para o usuário {usuario}!")
 
     avaliar = input("Deseja avaliar este pedido agora? (s/n): ").lower()
     if avaliar == "s":
         avaliar_pedido(usuario, str(novo_id))
+
 
 def carrinho(carrinho_do_usuario, usuario):
     while True:
