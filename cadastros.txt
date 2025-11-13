@@ -1,7 +1,6 @@
 Vitor,Souza,123
 Gabriel,Borges,1234
 Gustavo,Neri,12346
-rafael,rafael,123
 giovanna,bolinho123,123456
 Lucas,Melo,melo
 Guilherme,YE,123457
