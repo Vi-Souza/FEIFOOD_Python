@@ -75,7 +75,7 @@ def buscar_alimentos(usuario): #função para buscar alimentos
     
     encontrados = []
 
-    with open("alimentos.txt", "r") as arquivo: #abre o arquivo de alimentos
+    with open("alimentos.txt", "r", encoding="utf-8") as arquivo: #abre o arquivo de alimentos
         for linha in arquivo: #lê cada linha do arquivo
             partes = linha.strip().split(",") #separa as partes da linha
             if len(partes) == 3: #verifica se a linha tem 3 partes
